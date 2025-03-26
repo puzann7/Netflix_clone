@@ -13,21 +13,21 @@ A **Netflix Clone** built with **React.js**, featuring user authentication, movi
 - **Backend:** (To be implemented)
 - **Styling:** Tailwind CSS / Styled Components
 
-## 📌 Installation
-1. Clone the repo:
-   ```sh
-   git clone https://github.com/yourusername/netflix-clone.git
-
-2. Install dependencies
-  ```sh
-  npm install
-3. Start the development server
-  ```sh
-  npm run dev
-
-  📌 Future Enhancements
+ ## 📌 Future Enhancements
 Watchlist functionality
 
 Movie recommendations
 
 Backend integration for user data
+
+## 📌 Installation
+1. Clone the repo:
+   ```sh
+   git clone https://github.com/yourusername/netflix-clone.git
+
+2. Install dependencies:
+  ```sh
+  npm install
+3. Start the development server:
+  ```sh
+  npm run dev
