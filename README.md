@@ -24,11 +24,14 @@ Backend integration for user data
 1. Clone the repo:
    ```sh
    git clone https://github.com/yourusername/netflix-clone.git
+   ```
 
 2. Install dependencies:
   ```sh
   npm install
-  
+  ```
+
 3. Start the development server:
   ```sh
   npm run dev
+  ```
