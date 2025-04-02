@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react";
 
 function Login() {
-  return (
-    <div>
-login
-    </div>
-  )
+  return <div>login plsss</div>;
+
 }
 
-export default Login
+export default Login;
