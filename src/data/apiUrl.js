@@ -2,6 +2,7 @@
 
 const API_KEY = "a763a7b12d142dd8f8932fc5b3244e06";
 const BASE_URL = "https://api.themoviedb.org/3";
+export const IMG_URL  = "https://image.tmdb.org/t/p/w500/";
 
 const requests = {
   fetchTrending: `${BASE_URL}/trending/all/week?api_key=${API_KEY}`,
