@@ -6,9 +6,7 @@ const fetchTrending =  async ()=>{
         return response;
     } catch (error) {
         console.log(error);
-
     }
-
 }
 
 export {fetchTrending}
