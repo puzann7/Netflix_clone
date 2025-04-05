@@ -65,8 +65,20 @@ function Home() {
           Info
         </div>
       </div>
-      <Previews />
-      <Category categoryId={35} />
+      <div><Previews /></div>
+      <div>
+      <Category categoryName={"action"} />
+      <Category categoryName={"comedy"} />
+      <Category categoryName={"horror"} />
+      <Category categoryName={"romance"} />
+      <Category categoryName={"thriller"} />
+      <Category categoryName={"animation"} />
+      <Category categoryName={"crime"} />
+      <Category categoryName={"drama"} />
+      <Category categoryName={"scifi"} />
+      <Category categoryName={"documentary"} />
+      </div>
+
     </div>
   );
 }

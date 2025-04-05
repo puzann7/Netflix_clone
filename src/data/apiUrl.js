@@ -3,6 +3,18 @@
 export const API_KEY = "a763a7b12d142dd8f8932fc5b3244e06";
 export const BASE_URL = "https://api.themoviedb.org/3";
 export const IMG_URL  = "https://image.tmdb.org/t/p/w500/";
+export const genreMap = {
+    action: 28,
+    comedy: 35,
+    horror: 27,
+    romance: 10749,
+    thriller: 53,
+    animation: 16,
+    crime: 80,
+    drama: 18,
+    scifi: 878,
+    documentary: 99,
+  };
 
 const requests = {
   fetchTrending: `${BASE_URL}/trending/all/week?api_key=${API_KEY}`,
