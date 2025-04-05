@@ -3,21 +3,32 @@ import { fetchTrending } from "../../data/fetchReq";
 
 const movieContext = createContext();
 
-function MovieContextProvider({children}) {
-    const [trendings, setTrendings] = useState({});
+export const MovieContextProvider = ({children})=> {
+    const [trendings, setTrendings] = useState([]);
     useEffect(()=>{
         const getTrendings = async()=>{
             try {
                 const response = await fetchTrending();
+
                 setTrendings(response)
+
             } catch (error) {
                 console.log(error);
             }
         }
+
+
+        getTrendings();
     },[])
+
   return (
-    <movieContext.Provider>
+    <movieContext.Provider value={{trendings}}>
         {children}
     </movieContext.Provider>
   )
 }
+
+const useMovieData = ()=>{
+    return useContext(movieContext)
+}
+export default useMovieData
