@@ -1,7 +1,7 @@
 // Here we'll have all the url's for different api call necessary
 
-const API_KEY = "a763a7b12d142dd8f8932fc5b3244e06";
-const BASE_URL = "https://api.themoviedb.org/3";
+export const API_KEY = "a763a7b12d142dd8f8932fc5b3244e06";
+export const BASE_URL = "https://api.themoviedb.org/3";
 export const IMG_URL  = "https://image.tmdb.org/t/p/w500/";
 
 const requests = {
