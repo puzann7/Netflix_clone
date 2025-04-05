@@ -20,12 +20,14 @@ function Home() {
     >
       <NavBar />
     </div>
-      <h1 className="text-white text-center ">#1 Trending Today</h1>
-      <div className="flex text-white justify-around p-4 ">
-        <div>My List</div>
-        <div>Play</div>
-        <div>
-            <img src="../../public/assets/icons/info.png" alt="" />
+      <h1 className="text-white  flex justify-center gap-2"><img className="w-6 " src="/assets/icons/one.png" alt="" /> Trending Today</h1>
+      <div className="flex text-white justify-around mx-4 my-8 ">
+        <div className="">
+            <img className="w-5 m-auto" src="../../public/assets/icons/plus.png" alt="" />
+             My List</div>
+        <div className="h-10 w-20 bg-[#C4C4C4] rounded-lg flex justify-around text-center "><img className="scale-75" src="/assets/icons/play.png" alt="" />Play</div>
+        <div className="">
+            <img className="w-6 m-auto" src="../../public/assets/icons/info.png" alt="" />
         Info</div>
       </div>
     </div>
