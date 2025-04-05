@@ -9,4 +9,13 @@ const fetchTrending =  async ()=>{
     }
 }
 
-export {fetchTrending}
+const fetchCategory = async (categoryId)=>{
+    try {
+        const response = await axios.get(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${categoryId}`);
+        return response.data.results;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export {fetchTrending, fetchCategory}

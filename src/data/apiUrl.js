@@ -8,7 +8,7 @@ const requests = {
   fetchTrending: `${BASE_URL}/trending/all/week?api_key=${API_KEY}`,
   fetchLatestMovies: `${BASE_URL}/discover/movie?api_key=${API_KEY}&sort_by=release_date.desc`,
   fetchLatestTVShows: `${BASE_URL}/discover/tv?api_key=${API_KEY}&sort_by=first_air_date.desc`,
-  fetchActionMovies: `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=28`,
+  fetchCategory: ``,
   fetchComedyMovies: `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=35`,
   fetchHorrorMovies: `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=27`,
   fetchDocumentaries: `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=99`,
