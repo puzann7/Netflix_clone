@@ -5,6 +5,7 @@ import { IMG_URL } from "../data/apiUrl";
 import MoviePreview from "../Small components/MoviePreview";
 import useMovieData from "../contexts/Movie Category/movieContext";
 import { MovieContextProvider } from "../contexts/Movie Category/movieContext";
+import Previews from "../components/Previews";
 
 function Home() {
     const {trendings} = useMovieData()
@@ -40,12 +41,12 @@ const homePosterImage = `${IMG_URL}${mostTrendingMovie.poster_path}`;
         <div className="">
             <img className="w-5 m-auto" src="../../public/assets/icons/plus.png" alt="" />
              My List</div>
-      <MoviePreview />
         <div className="h-10 w-22 bg-[#C4C4C4] rounded-lg flex justify-end items-center text-black font-semibold px-2.5 relative"><img className="scale-25 absolute left-1/2 top-1/2 -translate-x-[65%] -translate-y-1/2" src="/assets/icons/play.png" alt="" />Play</div>
         <div className="">
             <img className="w-6 m-auto" src="../../public/assets/icons/info.png" alt="" />
         Info</div>
       </div>
+      <Previews />
     </div>
   );
 }
