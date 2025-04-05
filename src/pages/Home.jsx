@@ -1,17 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import { fetchTrending } from "../data/fetchReq";
 import { IMG_URL } from "../data/apiUrl";
 import MoviePreview from "../Small components/MoviePreview";
+import useMovieData from "../contexts/Movie Category/movieContext";
+import { MovieContextProvider } from "../contexts/Movie Category/movieContext";
 
 function Home() {
+    const {trendings} = useMovieData()
   const [mostTrendingMovie, setMostTrendingMovie] = useState({});
-  const homePosterImage = `${IMG_URL}${mostTrendingMovie.poster_path}`;
-  const getMostTrendingMovie = async () => {
-    const trendings = await fetchTrending();
-    setMostTrendingMovie(trendings.data.results[0]);
-  };
-  getMostTrendingMovie();
+useEffect(() => {
+    trendings.length>0 && setMostTrendingMovie(trendings[0])
+}, [trendings])
+const homePosterImage = `${IMG_URL}${mostTrendingMovie.poster_path}`;
+
+//   const getMostTrendingMovie = async () => {
+//     const trendings = await fetchTrending();
+//     setMostTrendingMovie(trendings[0]);
+//   };
+//   getMostTrendingMovie();
+
+    // const {trendings} = useMovieData();
+    // console.log(trendings);
+
+
+
 
   return (
     <div className="container bg-black h-screen w-screen  ">
