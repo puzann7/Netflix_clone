@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import { fetchTrending } from "../data/fetchReq";
 import { IMG_URL } from "../data/apiUrl";
+import MoviePreview from "../Small components/MoviePreview";
 
 function Home() {
   const [mostTrendingMovie, setMostTrendingMovie] = useState({});
@@ -26,6 +27,7 @@ function Home() {
         <div className="">
             <img className="w-5 m-auto" src="../../public/assets/icons/plus.png" alt="" />
              My List</div>
+      <MoviePreview />
         <div className="h-10 w-22 bg-[#C4C4C4] rounded-lg flex justify-end items-center text-black font-semibold px-2.5 relative"><img className="scale-25 absolute left-1/2 top-1/2 -translate-x-[65%] -translate-y-1/2" src="/assets/icons/play.png" alt="" />Play</div>
         <div className="">
             <img className="w-6 m-auto" src="../../public/assets/icons/info.png" alt="" />
