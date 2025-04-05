@@ -16,11 +16,11 @@ function Previews() {
 
 
   return (
-    <div className='bg-red-500 h-[18vh] '>
-        <h1 className='text-white'>Previews</h1>
-    <div className=''>
+    <div className='h-[20vh] w-auto pl-4  '>
+        <h1 className='text-white font-bold text-xl pb-2'>Previews</h1>
+    <div className='flex gap-3 overflow-x-scroll'>
         {trendingPoster && trendingPoster.map((poster)=>(
-            <MoviePreview image={`${IMG_URL}${poster}`} />
+            <MoviePreview key={poster} image={`${IMG_URL}${poster}`} />
         ))}
     </div>
     </div>

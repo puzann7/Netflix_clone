@@ -6,6 +6,7 @@ import MoviePreview from "../Small components/MoviePreview";
 import useMovieData from "../contexts/Movie Category/movieContext";
 import { MovieContextProvider } from "../contexts/Movie Category/movieContext";
 import Previews from "../components/Previews";
+import CategoryPreview from "../Small components/CategoryPreview";
 
 function Home() {
     const {trendings} = useMovieData()
@@ -28,10 +29,10 @@ const homePosterImage = `${IMG_URL}${mostTrendingMovie.poster_path}`;
 
 
   return (
-    <div className="container bg-black h-screen w-screen  ">
+    <div className="container bg-black relative min-h-screen flex-wrap  ">
     <div
       style={{ backgroundImage: `url(${homePosterImage})` }}
-      className="h-[60%] w-full  bg-center bg-cover relative"
+      className="h-[60vh] w-full  bg-center bg-cover relative"
     >
         <div class="absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
       <NavBar />
@@ -47,6 +48,7 @@ const homePosterImage = `${IMG_URL}${mostTrendingMovie.poster_path}`;
         Info</div>
       </div>
       <Previews />
+      <CategoryPreview />
     </div>
   );
 }
