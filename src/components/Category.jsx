@@ -3,6 +3,8 @@ import { fetchCategory } from "../data/fetchReq";
 import CategoryPreview from "../Small components/CategoryPreview";
 import { IMG_URL } from "../data/apiUrl";
 import { genreMap } from "../data/apiUrl";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 function Category({ categoryName, image }) {
   const categoryId = genreMap[categoryName];
 
@@ -21,7 +23,7 @@ function Category({ categoryName, image }) {
 
   return (
     <div className="h-[30vh] w-auto pl-4  ">
-      <h1 className="text-white font-bold text-xl pb-2 capitalize">
+      <h1 className="text-white font-bold md:text-2xl text-xl pb-2 capitalize">
         {categoryName}
       </h1>
       <div className="flex gap-1 items-center  overflow-x-scroll">

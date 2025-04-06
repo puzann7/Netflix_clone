@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+::-webkit-scrollbar {
+    height: 6px; /* For horizontal scroll */
+    width: 6px; /* For vertical scroll */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5); /* Dark thumb color */
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent; /* Invisible track */
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent; /* Invisible corner */
+  }

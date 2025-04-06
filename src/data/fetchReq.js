@@ -20,4 +20,14 @@ const fetchCategory = async (categoryId)=>{
     }
 }
 
-export {fetchTrending, fetchCategory}
+const fetchMovieTrailer = async  (movieId) =>{
+    try {
+        const response = await axios.get(`${BASE_URL}/movie/${movieId}/videos?api_key=${API_KEY}`)
+        return response
+    } catch (error) {
+        console.log(error);
+    }
+}
+//   fetchTVTrailer: (tvId) => `${BASE_URL}/tv/${tvId}/videos?api_key=${API_KEY}`,
+
+export {fetchTrending, fetchCategory, fetchMovieTrailer}
