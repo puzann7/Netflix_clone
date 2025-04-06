@@ -29,7 +29,7 @@ function Category({ categoryName, image }) {
           category.map((movie) => (
             <CategoryPreview
               key={movie.id}
-              image={`${IMG_URL}${movie.poster_path}`}
+              image={`${IMG_URL}w500/${movie.poster_path}`}
             />
           ))}
       </div>

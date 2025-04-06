@@ -2,19 +2,28 @@
 
 export const API_KEY = "a763a7b12d142dd8f8932fc5b3244e06";
 export const BASE_URL = "https://api.themoviedb.org/3";
-export const IMG_URL  = "https://image.tmdb.org/t/p/w500/";
+export const IMG_URL  = "https://image.tmdb.org/t/p/";
 export const genreMap = {
-    action: 28,
-    comedy: 35,
-    horror: 27,
-    romance: 10749,
-    thriller: 53,
-    animation: 16,
-    crime: 80,
-    drama: 18,
-    scifi: 878,
-    documentary: 99,
+    "Action Packed": [28, 12, 878],
+    "Girls Night In": [10749, 35, 18],
+    "Edge Of Your Seat": [53, 9648, 27],
+    "Feel Good": [35, 10751, 10749],
+    "Music And Musicals": [10402, 18],
+    "Mind Bending Thrillers": [9648, 878, 53],
+    "Chilling Horror": [27, 9648],
+    "True Crime": [80, 99],
+    "Comedy": 35,
+    "Romance": 10749,
+    "Thriller": 53,
+    "Animation": 16,
+    "Drama": 18,
+    "Sci-Fi": 878,
+    "Documentary": 99,
+    "Feel Good Movies": [35, 10749, 10751],
+    "Mystery": 9648,
+    "Family Watch Together": [10751, 16, 35],
   };
+
 
 const requests = {
   fetchTrending: `${BASE_URL}/trending/all/week?api_key=${API_KEY}`,
