@@ -21,9 +21,10 @@ const fetchCategory = async (categoryId)=>{
 }
 
 const fetchMovieTrailer = async  (movieId) =>{
+    if(!movieId) return;
     try {
         const response = await axios.get(`${BASE_URL}/movie/${movieId}/videos?api_key=${API_KEY}`)
-        return response
+        return response.data.results;
     } catch (error) {
         console.log(error);
     }
