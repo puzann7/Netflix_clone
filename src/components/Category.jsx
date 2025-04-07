@@ -24,7 +24,7 @@ function Category({ categoryName}) {
       <h1 className="text-white font-bold md:text-2xl text-xl pb-2 capitalize">
         {categoryName}
       </h1>
-      <div className="flex gap-1 lg:gap-4 items-center  overflow-x-scroll">
+      <div className="flex gap-1 lg:gap-4 items-center  overflow-x-scroll snap-x">
         {category &&
           category.map((movie) => (
             <CategoryPreview
