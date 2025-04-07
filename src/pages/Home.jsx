@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
-import { fetchTrending } from "../data/fetchReq";
-import { genreMap, IMG_URL } from "../data/apiUrl";
-import MoviePreview from "../Small components/MoviePreview";
+
+import { genreMap} from "../data/apiUrl";
+
 import useMovieData from "../contexts/Movie Category/movieContext";
-import { MovieContextProvider } from "../contexts/Movie Category/movieContext";
+
 import Previews from "../components/Previews";
 import Category from "../components/Category";
-import { fetchMovieTrailer } from "../data/fetchReq";
-import { VDO_URL } from "../data/apiUrl";
+
 
 function Home() {
   const { trendings } = useMovieData();
@@ -17,7 +16,7 @@ function Home() {
   useEffect(() => {
     trendings.length > 0 && setMostTrendingMovie(trendings[0]);
   }, [trendings]);
-  const homePosterImage = `${IMG_URL}original/${mostTrendingMovie.poster_path}`;
+  const homePosterImage = `${import.meta.env.VITE_IMG_URL}original/${mostTrendingMovie.poster_path}`;
 
   //   const getMostTrendingMovie = async () => {
   //     const trendings = await fetchTrending();

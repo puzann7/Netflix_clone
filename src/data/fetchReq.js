@@ -1,6 +1,5 @@
 import axios from "axios";
 import requests from "./apiUrl";
-import { BASE_URL, API_KEY } from "./apiUrl";
 
 const fetchTrending =  async ()=>{
     try {
@@ -13,7 +12,7 @@ const fetchTrending =  async ()=>{
 
 const fetchCategory = async (categoryId)=>{
     try {
-        const response = await axios.get(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${categoryId}`);
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/discover/movie?api_key=${import.meta.env.VITE_API_KEY}&with_genres=${categoryId}`);
         return response.data.results;
     } catch (error) {
         console.log(error);
@@ -23,7 +22,7 @@ const fetchCategory = async (categoryId)=>{
 const fetchMovieTrailer = async  (movieId) =>{
     if(!movieId) return;
     try {
-        const response = await axios.get(`${BASE_URL}/movie/${movieId}/videos?api_key=${API_KEY}`)
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/movie/${movieId}/videos?api_key=${import.meta.env.VITE_API_KEY}`)
         return response.data.results;
     } catch (error) {
         console.log(error);

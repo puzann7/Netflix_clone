@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { fetchCategory } from "../data/fetchReq";
 import CategoryPreview from "../Small components/CategoryPreview";
-import { IMG_URL } from "../data/apiUrl";
 import { genreMap } from "../data/apiUrl";
-import { Swiper, SwiperSlide } from "swiper/react";
 
-function Category({ categoryName, image }) {
+function Category({ categoryName}) {
   const categoryId = genreMap[categoryName];
 
   const [category, setCategory] = useState();
