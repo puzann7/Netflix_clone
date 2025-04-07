@@ -11,6 +11,8 @@ import Category from "../components/Category";
 
 function Home() {
   const { trendings } = useMovieData();
+  console.log(import.meta.env.VITE_API_KEY);
+  
 
   const [mostTrendingMovie, setMostTrendingMovie] = useState({});
   useEffect(() => {
