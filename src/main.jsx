@@ -9,12 +9,14 @@ import Login from './pages/Login'
 import Home from './pages/Home'
 import Movies from './pages/Movies'
 import TVShows from './pages/TVShows'
+import Signup from './pages/Signup'
 
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<Layout />}>
             <Route path='' element={<GetStarted />} />
+            <Route path='signup' element={<Signup />} />
             <Route path='login' element={<Login />} />
             <Route path='home' element={<Home />} />
             <Route path='movies/:movieId' element={<Movies />} />
