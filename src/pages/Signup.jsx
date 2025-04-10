@@ -8,24 +8,15 @@ import { useLocation } from "react-router-dom";
 const auth = getAuth(app);
 
 function Signup() {
-    const location = useLocation();
 
 const [email, setEmail] = useState("");
-  useEffect(() => {
-      const SignUpemail = location.state?.email || '';
-        setEmail(SignUpemail)
-      console.log(email);
-
-  }, [])
-
   const [password, setPassword] = useState("");
 
   const createUser = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((value) => alert("success"))
       .catch((value) => alert("failed"));
-    console.log(email);
-    console.log(password);
+  
   };
 
   return (
@@ -34,7 +25,7 @@ const [email, setEmail] = useState("");
         value={email}
         placeholder="Enter your email"
         type="email"
-        readOnly
+        onChange={(e)=>setEmail(e.target.value)}
       />
       <AuthInput
         value={password}

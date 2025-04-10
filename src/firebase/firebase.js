@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
-const firebaseConfig = {
+export const firebaseConfig = {
     apiKey: "AIzaSyBkb2HJuE_ZGN7kNk-L0YbOSj13ixwwpbA",
     authDomain: "netflix-43cf3.firebaseapp.com",
     projectId: "netflix-43cf3",
