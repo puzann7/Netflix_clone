@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from "react";
 import AuthContainer from "../Small components/AuthContainer";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithPopup,  } from "firebase/auth";
 import { app } from "../firebase/firebase";
 import AuthInput from "../Small components/AuthInput";
 import { useLocation } from "react-router-dom";
+import useAuth, { AuthContextProvider } from "../contexts/Authentication/authContext";
+import { GoogleAuthProvider } from "firebase/auth/web-extension";
 
 const auth = getAuth(app);
 
 function Signup() {
+    const {signUpUserWithEmailAndPassword, signUpUserWithGoogle} = useAuth()
 
 const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const createUser = () => {
-    createUserWithEmailAndPassword(auth, email, password)
+    signUpUserWithEmailAndPassword(email,password)
       .then((value) => alert("success"))
       .catch((value) => alert("failed"));
-  
   };
-
   return (
     <AuthContainer>
       <AuthInput
@@ -36,6 +37,9 @@ const [email, setEmail] = useState("");
 
       <button onClick={createUser} className="bg-white cursor-pointer">
         Sign Up
+      </button>
+      <button onClick={()=>signUpUserWithGoogle()} className="bg-white cursor-pointer">
+        Sign Up with google
       </button>
     </AuthContainer>
   );
