@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { app } from "../firebase/firebase";
 import AuthContainer from "../Small components/AuthContainer";
@@ -9,14 +9,7 @@ import { useNavigate } from "react-router-dom";
 const auth = getAuth(app);
 
 function GetStarted() {
-    const navigate = useNavigate();
-  const signUpUser = () => {
-    createUserWithEmailAndPassword(
-      auth,
-      "poojanbhatt7@gmail.com",
-      "pass@123"
-    ).then((value) => console.log(value));
-  };
+  const navigate = useNavigate();
   return (
     <AuthContainer>
       <div className="absolute bottom-0 bg-gradient-to-t from-black to-transparent h-[40%] w-full "></div>
@@ -42,11 +35,14 @@ function GetStarted() {
         </h1>
         <h1 className="lg:text-3xl text-lg">Watch anywhere. Cancel anytime.</h1>
         <h1 className="lg:text-xl text-sm">
-          Ready to watch? Enter your email to create an account.
+          Ready to watch? Get Started to create an account.
         </h1>
-        <div className="flex gap-2">
-        <AuthInput type="email" placeholder="Enter your email" className="lg:w-[30vw] lg:py-4"/>
-          <button onClick={()=> navigate("/signup")} className="bg-[#E50914] cursor-pointer inline-block  rounded-sm lg:px-8 font-semibold  text-white px-4 py-2 ">
+        <div className="flex ">
+          <button
+            type="submit"
+            onClick={() => navigate("/signup")}
+            className="bg-[#E50914] cursor-pointer inline-block  rounded-sm lg:px-8 font-semibold  text-white px-4 py-2 "
+          >
             Get started &gt;
           </button>
         </div>

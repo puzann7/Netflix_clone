@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 
-import { genreMap} from "../data/apiUrl";
+import { genreMap } from "../data/apiUrl";
 
 import useMovieData from "../contexts/Movie Category/movieContext";
 
 import Previews from "../components/Previews";
 import Category from "../components/Category";
 
-
 function Home() {
   const { trendings } = useMovieData();
   console.log(import.meta.env.VITE_API_KEY);
-  
 
   const [mostTrendingMovie, setMostTrendingMovie] = useState({});
   useEffect(() => {
     trendings.length > 0 && setMostTrendingMovie(trendings[0]);
   }, [trendings]);
-  const homePosterImage = `${import.meta.env.VITE_IMG_URL}original/${mostTrendingMovie.poster_path}`;
+  const homePosterImage = `${import.meta.env.VITE_IMG_URL}original/${
+    mostTrendingMovie.poster_path
+  }`;
 
   //   const getMostTrendingMovie = async () => {
   //     const trendings = await fetchTrending();
@@ -51,7 +51,7 @@ function Home() {
         </div>
         <div
           style={{ backgroundImage: `url(${homePosterImage})` }}
-          className="h-[60vh] w-full lg:hidden  bg-center md:bg-top  bg-cover relative"
+          className="h-[60vh] w-full lg:hidden  bg-center md:bg-top  bg-cover relative"g
         >
           <div class="absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
         </div>
@@ -59,10 +59,15 @@ function Home() {
           <img className="w-6  md:w-8" src="/assets/icons/one.png" alt="" />{" "}
           Trending Today
         </h1>
-        <div className=" lg:absolute
-      lg:top-[25vh] left-[3vw]  hidden lg:block text-white ">
-            <h1 className="lg:text-5xl mb-8 lg:font-bold">Oppenheimer</h1>
-            <div className="w-2/3">The story of J. Robert Oppenheimer's role in the development of the atomic bomb during World War II.</div>
+        <div
+          className=" lg:absolute
+      lg:top-[25vh] left-[3vw]  hidden lg:block text-white "
+        >
+          <h1 className="lg:text-5xl mb-8 lg:font-bold">Oppenheimer</h1>
+          <div className="w-2/3">
+            The story of J. Robert Oppenheimer's role in the development of the
+            atomic bomb during World War II.
+          </div>
         </div>
         <div
           className="flex  text-white justify-around mx-4 lg:mx-8 my-8
