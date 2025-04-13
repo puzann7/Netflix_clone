@@ -4,6 +4,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithPopup,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { app } from "../firebase/firebase";
 import AuthInput from "../Small components/AuthInput";
@@ -21,7 +22,7 @@ function Signup() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  
   const createUser = () => {
     signUpUserWithEmailAndPassword(email, password)
       .then((value) => alert("success"))
@@ -29,7 +30,7 @@ function Signup() {
   };
   return (
     <AuthContainer className="flex flex-col justify-center items-center ">
-      <div className="w-[90%] h-[60vh] lg:w-[30%]  px-8 py-6 flex flex-col items-center gap-10 bg-black/40 backdrop-brightness-75">
+      <div className="w-[90%] h-[60vh] lg:w-[30%] rounded-lg  px-8 py-6 flex flex-col items-center gap-10 bg-black/40 backdrop-brightness-75">
         <h1 className="text-white text-xl font-semibold ">Sign Up</h1>
         <div className="flex flex-col gap-2">
           <AuthInput
