@@ -29,9 +29,10 @@ function Home() {
   // const {trendings} = useMovieData();
   // console.log(trendings);
 
+
   return (
     <>
-      <div className="container bg-black relative min-h-screen  min-w-full flex-wrap  ">
+      <div className="container bg-black relative min-h-screen z-20  min-w-full flex-wrap  ">
         <NavBar />
         <div className="hidden lg:block h-[75vh] relative  ">
           <video
