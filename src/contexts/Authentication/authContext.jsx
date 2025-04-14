@@ -13,6 +13,7 @@ import { onAuthStateChanged } from "firebase/auth";
 
  export const AuthContextProvider = ({children})=>{
     const [user,setUser] = useState(null);
+    const [loader, setLoader] = useState(true)
     const signUpUserWithEmailAndPassword = (email, password)=>{
         return createUserWithEmailAndPassword(firebaseAuth,email,password)
     }
@@ -32,10 +33,11 @@ import { onAuthStateChanged } from "firebase/auth";
                 console.log("Logged out");
                 setUser(null);
             }
+            setLoader(false)
         })
-      })
+      },[user])
     return(
-        <authContext.Provider value={{signUpUserWithEmailAndPassword, signUpUserWithGoogle, user}}>
+        <authContext.Provider value={{signUpUserWithEmailAndPassword, signUpUserWithGoogle, user, loader}}>
             {children}
         </authContext.Provider>
     )
