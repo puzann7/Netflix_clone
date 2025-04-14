@@ -5,6 +5,7 @@ import AuthContainer from "../Small components/AuthContainer";
 import AuthInput from "../Small components/AuthInput";
 import { redirect, useNavigate } from "react-router-dom";
 
+
 const auth = getAuth(app);
 function Login() {
   const navigate = useNavigate();
