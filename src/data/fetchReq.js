@@ -1,6 +1,6 @@
 import axios from "axios";
 import requests from "./apiUrl";
-
+import { useState } from "react";
 
 
 const fetchTrending =  async ()=>{
@@ -16,6 +16,8 @@ const fetchCategory = async (categoryId)=>{
     try {
         const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/discover/movie?api_key=${import.meta.env.VITE_API_KEY}&with_genres=${categoryId}`);
         return response.data.results;
+        setMediaLoader(false)
+
     } catch (error) {
         console.log(error);
     }
@@ -26,6 +28,7 @@ const fetchMovieTrailer = async  (movieId) =>{
     try {
         const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/movie/${movieId}/videos?api_key=${import.meta.env.VITE_API_KEY}`)
         return response.data.results;
+        setMediaLoader(false)
     } catch (error) {
         console.log(error);
     }

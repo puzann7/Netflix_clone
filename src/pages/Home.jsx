@@ -7,11 +7,11 @@ import useMovieData from "../contexts/Movie Category/movieContext";
 
 import Previews from "../components/Previews";
 import Category from "../components/Category";
+import Loader from "../components/Loader";
 
 function Home() {
   const { trendings } = useMovieData();
   console.log(import.meta.env.VITE_API_KEY);
-
   const [mostTrendingMovie, setMostTrendingMovie] = useState({});
   useEffect(() => {
     trendings.length > 0 && setMostTrendingMovie(trendings[0]);
