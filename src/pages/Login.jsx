@@ -16,10 +16,11 @@ function Login() {
       .then((value) => navigate("/home"))
       .catch((err) => alert(err));
   };
+
   return (
     <AuthContainer className="flex flex-col justify-center items-center ">
-      <div className="w-[90%] h-[60vh] lg:w-[30%]  px-8 py-6 flex flex-col items-center gap-10 bg-black/40 backdrop-brightness-75">
-        <h1 className="text-white text-xl font-semibold ">Login</h1>
+      <div className="w-[90%] h-[60vh] lg:w-[30%]  px-8 py-6 flex flex-col items-center gap-10 bg-black/40 backdrop-brightness-75 font-[poppins]">
+        <h1 className="text-white text-2xl lg:text-4xl font-semibold font-[bebas_neue] tracking-wider">Log In</h1>
         <div className="flex flex-col gap-2">
           <AuthInput
             value={email}

@@ -32,7 +32,7 @@ function Home() {
 
   return (
     <>
-      <div className="container bg-black relative min-h-screen z-20  min-w-full flex-wrap  ">
+      <div className="container bg-black font-[poppins] relative min-h-screen z-20  min-w-full flex-wrap  ">
         <NavBar />
         <div className="hidden lg:block h-[75vh] relative  ">
           <video
@@ -64,8 +64,8 @@ function Home() {
           className=" lg:absolute
       lg:top-[25vh] left-[3vw]  hidden lg:block text-white "
         >
-          <h1 className="lg:text-5xl mb-8 lg:font-bold">Oppenheimer</h1>
-          <div className="w-2/3">
+          <h1 className="lg:text-8xl mb-8 tracking-wide  lg:font-bold font-[Bebas_Neue]">Oppenheimer</h1>
+          <div className="w-2/3 font-[poppins]">
             The story of J. Robert Oppenheimer's role in the development of the
             atomic bomb during World War II.
           </div>

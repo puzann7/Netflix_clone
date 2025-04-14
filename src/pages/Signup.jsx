@@ -19,19 +19,23 @@ const auth = getAuth(app);
 function Signup() {
   const { signUpUserWithEmailAndPassword, signUpUserWithGoogle } = useAuth();
   const navigate = useNavigate()
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+  const [error, setError] = useState({});
+
   const createUser = () => {
     signUpUserWithEmailAndPassword(email, password)
-      .then((value) => alert("success"))
-      .catch((value) => alert("failed"));
+      .then((value) => navigate("/"))
+      .catch((error)=>{
+        setError((prev)=>{
+            return {...prev, Invalid_input:"Invalid email or password"}
+        })
+      })
   };
   return (
     <AuthContainer className="flex flex-col justify-center items-center ">
-      <div className="w-[90%] h-[60vh] lg:w-[30%] rounded-lg  px-8 py-6 flex flex-col items-center gap-10 bg-black/40 backdrop-brightness-75">
-        <h1 className="text-white text-xl font-semibold ">Sign Up</h1>
+      <div className="w-[90%] h-[65vh] lg:w-[30%] rounded-lg  px-8 py-6 flex flex-col items-center gap-10 bg-black/40 backdrop-brightness-75 font-[poppins]">
+        <h1 className="text-white lg:text-4xl text-xl font-semibold font-[bebas_neue] tracking-wider ">Sign Up</h1>
         <div className="flex flex-col gap-2">
           <AuthInput
             value={email}

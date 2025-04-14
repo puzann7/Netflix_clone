@@ -20,7 +20,7 @@ function Category({ categoryName}) {
   }, [categoryId]);
 
   return (
-    <div className="h-[30vh] w-auto pl-4  ">
+    <div className="h-[30vh] w-auto pl-4  font-[Bebas_neue] tracking-widest">
       <h1 className="text-white font-bold md:text-2xl text-xl pb-2 capitalize">
         {categoryName}
       </h1>
