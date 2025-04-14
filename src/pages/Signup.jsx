@@ -51,6 +51,7 @@ function Signup() {
             onChange={(e) => setPassword(e.target.value)}
             className="w-72"
           />
+          {error.Invalid_input && <h1 className=" text-[#E50914] text-sm ">{error.Invalid_input}</h1>}
         </div>
         <div className="flex flex-col w-72 gap-4  ">
           <button
