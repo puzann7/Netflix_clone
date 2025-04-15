@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Profile from "./Profile";
 
 const NavBar = () => {
   return (
@@ -22,6 +23,7 @@ const NavBar = () => {
       <div className="hidden lg:flex lg:items-center lg:gap-8 ">
         <img className="w-5 h-5 cursor-pointer" src="assets/icons/search.png" />
         <img className="w-5 h-5 cursor-pointer" src="assets/icons/bell.png" alt="" />
+        <Profile className="hidden lg:block"/>
       </div>
     </div>
   );
