@@ -4,6 +4,7 @@ import { app } from "../firebase/firebase";
 import AuthContainer from "../Small components/AuthContainer";
 import AuthInput from "../Small components/AuthInput";
 import { redirect, useNavigate } from "react-router-dom";
+import useAuth from "../contexts/Authentication/authContext";
 
 
 const auth = getAuth(app);
@@ -11,11 +12,8 @@ function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const loginUser = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((value) => navigate("/home"))
-      .catch((err) => alert(err));
-  };
+  const {logInUserWithEmailAndPassword} = useAuth();
+
 
   return (
     <AuthContainer className="flex flex-col justify-center items-center ">
@@ -39,7 +37,7 @@ function Login() {
         </div>
         <div className="flex flex-col w-72 gap-4  ">
           <button
-            onClick={loginUser}
+            onClick={()=>logInUserWithEmailAndPassword(email,password)}
             className="bg-[#E50914] text-white py-2 text-sm  cursor-pointer rounded-sm"
           >
             Log In

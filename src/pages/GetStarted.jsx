@@ -25,7 +25,7 @@ function GetStarted() {
             alt=""
           />
         </picture>
-        <button className="bg-[#E50914] cursor-pointer rounded-sm lg:w-[4vw] font-semibold lg:text-[0.8rem] font-[poppins] text-sm  text-white px-1 py-1">
+        <button onClick={()=> navigate("/login")} className="bg-[#E50914] cursor-pointer rounded-sm lg:w-[4vw] font-semibold lg:text-[0.8rem] font-[poppins] text-sm  text-white px-1 py-1">
           Sign In
         </button>
       </div>
