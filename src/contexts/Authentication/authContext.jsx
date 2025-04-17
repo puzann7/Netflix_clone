@@ -13,12 +13,25 @@ import { onAuthStateChanged } from "firebase/auth";
 
  export const AuthContextProvider = ({children})=>{
     const [user,setUser] = useState(null);
-    const [loader, setLoader] = useState(true)
-    const signUpUserWithEmailAndPassword = (email, password)=>{
-        return createUserWithEmailAndPassword(firebaseAuth,email,password)
+    const [loader, setLoader] = useState(true);
+    const [error, setError] = useState("")
+    const signUpUserWithEmailAndPassword =async (email, password)=>{
+        try {
+            const res = await  createUserWithEmailAndPassword(firebaseAuth,email,password)
+            setError(null)
+            return res;
+        } catch (error) {
+            setError(error.code.split("/")[1])
+        }
     }
-    const logInUserWithEmailAndPassword = (email,password)=>{
-        return signInWithEmailAndPassword(firebaseAuth, email,password)
+    const logInUserWithEmailAndPassword = async (email,password)=>{
+        try {
+            const res = await signInWithEmailAndPassword(firebaseAuth, email,password)
+            setError(null)
+            return res;
+        } catch (error) {
+            setError(error.code.split("/")[1])
+        }
     }
     const signUpUserWithGoogle =  ()=>{
        return  signInWithPopup(firebaseAuth, googleProvider)
