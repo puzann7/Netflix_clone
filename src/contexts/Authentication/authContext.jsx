@@ -17,11 +17,17 @@ import { onAuthStateChanged } from "firebase/auth";
     const signUpUserWithEmailAndPassword = (email, password)=>{
         return createUserWithEmailAndPassword(firebaseAuth,email,password)
     }
+    const logInUserWithEmailAndPassword = (email,password)=>{
+        return signInWithEmailAndPassword(firebaseAuth, email,password)
+    }
     const signUpUserWithGoogle =  ()=>{
        return  signInWithPopup(firebaseAuth, googleProvider)
     }
     const setData = (key,data)=>{
          set(ref(database,key),data);
+    }
+    const logOutUser = ()=>{
+        return signOut(firebaseAuth)
     }
     useEffect(() => {
         onAuthStateChanged(firebaseAuth,(user)=>{
@@ -37,7 +43,7 @@ import { onAuthStateChanged } from "firebase/auth";
         })
       },[user])
     return(
-        <authContext.Provider value={{signUpUserWithEmailAndPassword, signUpUserWithGoogle, user, loader}}>
+        <authContext.Provider value={{signUpUserWithEmailAndPassword, signUpUserWithGoogle, user, loader, logOutUser}}>
             {children}
         </authContext.Provider>
     )
