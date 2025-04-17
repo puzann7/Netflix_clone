@@ -17,21 +17,12 @@ import { GoogleAuthProvider } from "firebase/auth/web-extension";
 const auth = getAuth(app);
 
 function Signup() {
-  const { signUpUserWithEmailAndPassword, signUpUserWithGoogle } = useAuth();
+  const { signUpUserWithEmailAndPassword, signUpUserWithGoogle, error } = useAuth();
   const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState({});
 
-  const createUser = () => {
-    signUpUserWithEmailAndPassword(email, password)
-      .then((value) => navigate("/"))
-      .catch((error)=>{
-        setError((prev)=>{
-            return {...prev, Invalid_input:"Invalid email or password"}
-        })
-      })
-  };
+
   return (
     <AuthContainer className="flex flex-col justify-center items-center ">
       <div className="w-[90%] h-[65vh] lg:w-[30%] rounded-lg  px-8 py-6 flex flex-col items-center gap-10 bg-black/40 backdrop-brightness-75 font-[poppins]">
@@ -51,11 +42,11 @@ function Signup() {
             onChange={(e) => setPassword(e.target.value)}
             className="w-72"
           />
-          {error.Invalid_input && <h1 className=" text-[#E50914] text-sm ">{error.Invalid_input}</h1>}
+          {error && <h1 className=" text-[#E50914] text-sm ">{error}</h1>}
         </div>
         <div className="flex flex-col w-72 gap-4  ">
           <button
-            onClick={createUser}
+            onClick={()=> signUpUserWithEmailAndPassword(email, password)}
             className="bg-[#E50914] text-white py-2 text-sm  cursor-pointer rounded-sm"
           >
             Sign Up

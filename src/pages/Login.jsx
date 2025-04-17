@@ -12,7 +12,7 @@ function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {logInUserWithEmailAndPassword, signUpUserWithGoogle} = useAuth();
+  const {logInUserWithEmailAndPassword, signUpUserWithGoogle, error} = useAuth();
 
 
   return (
@@ -34,6 +34,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
             className="w-72"
           />
+           {error && <h1 className=" text-[#E50914] text-sm ">{error}</h1>}
         </div>
         <div className="flex flex-col w-72 gap-4  ">
           <button

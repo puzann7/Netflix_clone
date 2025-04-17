@@ -56,7 +56,7 @@ import { onAuthStateChanged } from "firebase/auth";
         })
       },[user])
     return(
-        <authContext.Provider value={{signUpUserWithEmailAndPassword, signUpUserWithGoogle, user, loader, logOutUser}}>
+        <authContext.Provider value={{signUpUserWithEmailAndPassword, signUpUserWithGoogle, user, loader, logOutUser, logInUserWithEmailAndPassword, error}}>
             {children}
         </authContext.Provider>
     )
