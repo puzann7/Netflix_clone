@@ -3,6 +3,7 @@ import { fetchCategory } from "../data/fetchReq";
 import CategoryPreview from "../Small components/CategoryPreview";
 import { genreMap } from "../data/apiUrl";
 import { useRef } from "react";
+import { SliderLeft, SliderRight } from "../Small components/Slider";
 
 function Category({ categoryName, ref}) {
   const categoryId = genreMap[categoryName];
