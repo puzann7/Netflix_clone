@@ -12,12 +12,11 @@ function Layout() {
   const hideFooterRoutes = ["/getstarted"];
   const shouldHideFooter = hideFooterRoutes.includes(location.pathname);
   const { user } = useAuth();
- 
+
 
   return (
     <MovieContextProvider>
       <div className="relative ">
-
         <Outlet />
        <Footer />
       </div>
