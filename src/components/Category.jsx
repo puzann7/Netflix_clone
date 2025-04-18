@@ -20,7 +20,13 @@ function Category({ categoryName, ref}) {
     };
     getCategory();
   }, [categoryId]);
-  const Slide = ()=>{
+  const SlideLeft = ()=>{
+    slideRef.current.scrollBy({
+        left:-600,
+        behaviour: "smooth"
+    });
+  }
+  const SlideRight = ()=>{
     slideRef.current.scrollBy({
         left:600,
         behaviour: "smooth"
