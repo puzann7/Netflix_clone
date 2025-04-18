@@ -8,6 +8,7 @@ import useMovieData from "../contexts/Movie Category/movieContext";
 import Previews from "../components/Previews";
 import Category from "../components/Category";
 import Loader from "../components/Loader";
+import Footer from "../components/Footer";
 
 function Home() {
   const { trendings } = useMovieData();

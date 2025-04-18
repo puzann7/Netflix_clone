@@ -9,18 +9,17 @@ import GetStarted from "./GetStarted";
 import Loader from "../components/Loader";
 function Layout() {
   const location = useLocation();
-  const hideFooterRoutes = ["/"];
+  const hideFooterRoutes = ["/getstarted"];
   const shouldHideFooter = hideFooterRoutes.includes(location.pathname);
   const { user } = useAuth();
-  if (!user) {
-    return <Outlet />;
-  }
+ 
 
   return (
     <MovieContextProvider>
       <div className="relative ">
+
         <Outlet />
-        {!shouldHideFooter && <Footer />}
+       <Footer />
       </div>
     </MovieContextProvider>
   );
