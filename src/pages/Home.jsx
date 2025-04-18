@@ -7,11 +7,11 @@ import useMovieData from "../contexts/Movie Category/movieContext";
 
 import Previews from "../components/Previews";
 import Category from "../components/Category";
-import Loader from "../components/Loader";
-import Footer from "../components/Footer";
+import { useRef } from "react";
 
 function Home() {
   const { trendings } = useMovieData();
+  const sliderRef = useRef(null);
   console.log(import.meta.env.VITE_API_KEY);
   const [mostTrendingMovie, setMostTrendingMovie] = useState({});
   useEffect(() => {
@@ -105,7 +105,7 @@ function Home() {
         </div>
         <div className="lg:ml-8">
           {Object.keys(genreMap).map((genre) => (
-            <Category key={genre} categoryName={genre} />
+            <Category key={genre}  categoryName={genre} />
           ))}
         </div>
       </div>
