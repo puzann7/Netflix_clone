@@ -18,7 +18,7 @@ function Layout() {
     <MovieContextProvider>
       <div className="relative ">
         <Outlet />
-       <Footer />
+      {!shouldHideFooter && <Footer />}
       </div>
     </MovieContextProvider>
   );
