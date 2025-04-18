@@ -21,18 +21,8 @@ function Category({ categoryName, ref}) {
     };
     getCategory();
   }, [categoryId]);
-  const SlideLeft = ()=>{
-    slideRef.current.scrollBy({
-        left:-600,
-        behaviour: "smooth"
-    });
-  }
-  const SlideRight = ()=>{
-    slideRef.current.scrollBy({
-        left:600,
-        behaviour: "smooth"
-    });
-  }
+
+
 
   return (
     <div onMouseOver={()=> setShowSlider(true)} onMouseLeave={()=>setShowSlider(false)} className="h-[30vh] w-auto pl-4  font-[Bebas_neue] relative tracking-widest">
