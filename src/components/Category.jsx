@@ -30,12 +30,8 @@ function Category({ categoryName, ref}) {
         {categoryName}
       </h1>
       <div ref={slideRef} className="flex gap-1 scroll-smooth  lg:gap-4 items-center  overflow-x-scroll snap-x">
-      <button onClick={SlideLeft} className="absolute cursor-pointer text-white px-4 py-2">
-        <img className={`w-8 h-8 bg-white transition duration-200 ease-in-out rounded-full p-[0.5px]  ${showSlider ? "opacity-100" : "opacity-0"} `} src="/assets/icons/arrow.png" alt="" />
-      </button>
-      <button onClick={SlideRight} className=" absolute cursor-pointer right-0 text-white px-4 py-2">
-        <img className={`w-8 h-8 bg-white transition duration-200 ease-in-out rounded-full p-[0.5px] rotate-180  ${showSlider ? "opacity-100" : "opacity-0"} `} src="/assets/icons/arrow.png" alt="" />
-      </button>
+     <SliderLeft slideRef={slideRef} showSlider={showSlider} />
+      <SliderRight slideRef={slideRef} showSlider={showSlider}/>
         {category &&
           category.map((movie) => (
             <CategoryPreview
