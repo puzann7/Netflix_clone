@@ -3,10 +3,18 @@ import requests from "./apiUrl";
 import { useState } from "react";
 
 
-const fetchTrending =  async ()=>{
+const fetchTrendingMovies =  async ()=>{
     try {
         const response = await axios.get(requests.fetchTrending);
         return response.data.results;
+    } catch (error) {
+        console.log(error);
+    }
+}
+const fetchLatestMovies = async ()=>{
+    try {
+        const res = await axios.get(requests.fetchLatestMovies);
+        return res.data.results;
     } catch (error) {
         console.log(error);
     }
