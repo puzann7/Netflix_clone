@@ -29,74 +29,84 @@ function Home() {
   // const {trendings} = useMovieData();
   // console.log(trendings);
 
-
   return (
     <>
       <div className="container bg-black font-[poppins] relative min-h-screen z-20  min-w-full flex-wrap  ">
-        <NavBar />
-        <div className="hidden lg:block h-[75vh] relative  ">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover align-middle relative "
+        <Outlet />
+        <div className={`${currentLocation !== "/search" ? "lg:block" : "lg:hidden"}`}>
+          <NavBar />
+          <div className={`hidden lg:block h-[75vh] relative }  `}>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover align-middle relative "
+            >
+              <source
+                src="../../public/assets/homeTrailer (2).mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+            <div class="absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
+          </div>{" "}
+          }
+          <div
+            style={{ backgroundImage: `url(${homePosterImage})` }}
+            className="h-[60vh] w-full lg:hidden  bg-center md:bg-top  bg-cover relative"
+            g
           >
-            <source
-              src="../../public/assets/homeTrailer (2).mp4"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
-          <div class="absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        </div>
-        <div
-          style={{ backgroundImage: `url(${homePosterImage})` }}
-          className="h-[60vh] w-full lg:hidden  bg-center md:bg-top  bg-cover relative"g
-        >
-          <div class="absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        </div>
-        <h1 className="text-white md:text-2xl lg:hidden  flex justify-center gap-2">
-          <img className="w-6  md:w-8" src="/assets/icons/one.png" alt="" />{" "}
-          Trending Today
-        </h1>
-        <div
-          className=" lg:absolute
-      lg:top-[25vh] left-[3vw]  hidden lg:block text-white "
-        >
-          <h1 className="lg:text-8xl mb-8 tracking-wide  lg:font-bold font-[Bebas_Neue]">Oppenheimer</h1>
-          <div className="w-2/3 font-[poppins]">
-            The story of J. Robert Oppenheimer's role in the development of the
-            atomic bomb during World War II.
+            <div class="absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
           </div>
-        </div>
-        <div
-          className="flex  text-white justify-around mx-4 lg:mx-8 my-8
-      lg:justify-start lg:gap-5 lg:absolute lg:top-[50vh]   "
-        >
-          <div></div>
-          <div className="md:text-2xl lg:hidden">
-            <img
-              className="w-5 md:w-8 m-auto"
-              src="../../public/assets/icons/plus.png"
-              alt=""
-            />
-            My List
+          <h1 className="text-white md:text-2xl lg:hidden  flex justify-center gap-2">
+            <img className="w-6  md:w-8" src="/assets/icons/one.png" alt="" />{" "}
+            Trending Today
+          </h1>
+          <div
+            className=" lg:absolute
+      lg:top-[25vh] left-[3vw]  hidden lg:block text-white "
+          >
+            <h1 className="lg:text-8xl mb-8 tracking-wide  lg:font-bold font-[Bebas_Neue]">
+              Oppenheimer
+            </h1>
+            <div className="w-2/3 font-[poppins]">
+              The story of J. Robert Oppenheimer's role in the development of
+              the atomic bomb during World War II.
+            </div>
           </div>
           <div
-            className=" bg-[#C4C4C4] md:text-2xl lg:bg-white rounded-sm flex items-center
-        gap-2 text-black font-semibold px-6 lg:px-8  lg:py-2 relative cursor-pointer"
+            className="flex  text-white justify-around mx-4 lg:mx-8 my-8
+      lg:justify-start lg:gap-5 lg:absolute lg:top-[50vh]   "
           >
-            <img className="w-4 md:w-6 " src="/assets/icons/play.png" alt="" />
-            <span> Play</span>
-          </div>
-          <div className="md:text-2xl cursor-pointer lg:text-2xl lg:flex lg:items-center lg:px-8 lg:gap-2 lg:rounded-sm  lg:bg-white/25 lg:backdrop-blur-md">
-            <img
-              className="w-6 md:w-10 lg:w-6 m-auto"
-              src="../../public/assets/icons/info.png"
-              alt=""
-            />
-            Info
+            <div></div>
+            <div className="md:text-2xl lg:hidden">
+              <img
+                className="w-5 md:w-8 m-auto"
+                src="../../public/assets/icons/plus.png"
+                alt=""
+              />
+              My List
+            </div>
+            <div
+              className=" bg-[#C4C4C4] md:text-2xl lg:bg-white rounded-sm flex items-center
+        gap-2 text-black font-semibold px-6 lg:px-8  lg:py-2 relative cursor-pointer"
+            >
+              <img
+                className="w-4 md:w-6 "
+                src="/assets/icons/play.png"
+                alt=""
+              />
+              <span> Play</span>
+            </div>
+            <div className="md:text-2xl cursor-pointer lg:text-2xl lg:flex lg:items-center lg:px-8 lg:gap-2 lg:rounded-sm  lg:bg-white/25 lg:backdrop-blur-md">
+              <img
+                className="w-6 md:w-10 lg:w-6 m-auto"
+                src="../../public/assets/icons/info.png"
+                alt=""
+              />
+              Info
+            </div>
           </div>
         </div>
         <div className="lg:hidden">
