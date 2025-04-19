@@ -35,4 +35,4 @@ const fetchMovieTrailer = async  (movieId) =>{
 }
 //   fetchTVTrailer: (tvId) => `${BASE_URL}/tv/${tvId}/videos?api_key=${API_KEY}`,
 
-export {fetchTrending, fetchCategory, fetchMovieTrailer}
+export {fetchTrendingMovies, fetchCategory, fetchMovieTrailer, fetchLatestMovies}

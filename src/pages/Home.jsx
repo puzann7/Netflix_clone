@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
-
 import { genreMap } from "../data/apiUrl";
-
 import useMovieData from "../contexts/Movie Category/movieContext";
-
 import Previews from "../components/Previews";
 import Category from "../components/Category";
-import { useRef } from "react";
+import { Outlet } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function Home() {
-  const { trendings } = useMovieData();
-  const sliderRef = useRef(null);
-  console.log(import.meta.env.VITE_API_KEY);
+  const { trendingMovies } = useMovieData();
+  const location = useLocation();
+  const currentLocation = location.pathname;
+  console.log(currentLocation);
   const [mostTrendingMovie, setMostTrendingMovie] = useState({});
   useEffect(() => {
-    trendings.length > 0 && setMostTrendingMovie(trendings[0]);
-  }, [trendings]);
+    trendingMovies.length > 0 && setMostTrendingMovie(trendingMovies[0]);
+  }, [trendingMovies]);
   const homePosterImage = `${import.meta.env.VITE_IMG_URL}original/${
     mostTrendingMovie.poster_path
   }`;

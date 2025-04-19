@@ -1,14 +1,10 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import { fetchTrending } from "../data/fetchReq";
+import useMovieData from "../contexts/Movie Category/movieContext";
 function Movies() {
-    useEffect(()=>{
-        const fetchData = async ()=>{
-            const trendingMovies = await fetchTrending();
-            console.log(trendingMovies);
-        }
-        fetchData()
-    })
+   const {trendingMovies} = useMovieData();
+   console.log(trendingMovies);
+
   return(
     <div>
         movies12
