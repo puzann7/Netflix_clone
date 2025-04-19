@@ -105,7 +105,7 @@ function Home() {
         </div>
         <div className="lg:ml-8">
           {Object.keys(genreMap).map((genre) => (
-            <Category key={genre}  categoryName={genre} />
+            <Category key={genre} categoryName={genre} />
           ))}
         </div>
       </div>

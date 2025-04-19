@@ -20,6 +20,7 @@ import { AuthContextProvider } from "./contexts/Authentication/authContext";
 import PrivateRoutes from "./routes/PrivateRoutes";
 import { MovieContextProvider } from "./contexts/Movie Category/movieContext";
 import PublicRoutes from "./routes/PublicRoutes";
+import Search from "./components/Search";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,7 +31,10 @@ const router = createBrowserRouter(
         <Route path="login" element={<Login />} />
       </Route>
       <Route element={<PrivateRoutes />}>
-        <Route path="" element={<Home />} />
+        <Route path="" element={<Home />}>
+        <Route path="search" element={<Search />} />
+        </Route>
+
         <Route path="movies/:movieId" element={<Movies />} />
         <Route path="TVShows/:showId" element={<TVShows />} />
       </Route>
