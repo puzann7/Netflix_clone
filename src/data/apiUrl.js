@@ -1,9 +1,6 @@
 // Here we'll have all the url's for different api call necessary
 
-export const API_KEY = "a763a7b12d142dd8f8932fc5b3244e06";
-export const BASE_URL = "https://api.themoviedb.org/3";
-export const IMG_URL  = "https://image.tmdb.org/t/p/";
-export const VDO_URL = "https://www.youtube.com/embed/";
+
 
 export const genreMap = {
     "Action Packed": [28, 12, 878],
