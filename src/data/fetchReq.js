@@ -21,6 +21,14 @@ const fetchLatestMovies = async ()=>{
         console.log(error);
     }
 }
+const fetchAllMovies = async ()=>{
+    try {
+        const res = await axios.get()
+    } catch (error) {
+        console.log(error);
+
+    }
+}
 
 const fetchCategory = async (categoryId)=>{
     try {
