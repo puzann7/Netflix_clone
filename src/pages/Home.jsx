@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import { genreMap } from "../data/apiUrl";
 import useMovieData from "../contexts/Movie Category/movieContext";
-import Previews from "../components/Previews";
 import Category from "../components/Category";
 import { Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import PreviewSection from "../components/PreviewSection";
 
 function Home() {
   const { trendingMovies } = useMovieData();
@@ -110,7 +110,7 @@ function Home() {
           </div>
         </div>
         <div className="lg:hidden">
-          <Previews />
+          <PreviewSection />
         </div>
         <div className="lg:ml-8">
           {Object.keys(genreMap).map((genre) => (
