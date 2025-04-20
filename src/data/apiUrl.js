@@ -26,6 +26,7 @@ export const genreMap = {
 
 const requests = {
   fetchTrending: `${import.meta.env.VITE_BASE_URL}/trending/all/week?api_key=${import.meta.env.VITE_API_KEY}`,
+  fetchAllMovies:  `${import.meta.env.VITE_BASE_URL}/discover/movie?api_key=${import.meta.env.VITE_API_KEY}`
 
 };
 
