@@ -1,13 +1,17 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import useMovieData from "../contexts/Movie Category/movieContext";
+import { fetchAllMovies } from "../data/fetchReq";
 function Movies() {
-   const {trendingMovies} = useMovieData();
-   console.log(trendingMovies);
+    const [page, setPage] = useState(2);
+    useEffect(() => {
+        fetchAllMovies(page)
+    }, [page])
+
 
   return(
     <div>
-        movies12
+heyy
     </div>
   )
 }
