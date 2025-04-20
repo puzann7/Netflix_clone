@@ -31,12 +31,10 @@ const router = createBrowserRouter(
         <Route path="login" element={<Login />} />
       </Route>
       <Route element={<PrivateRoutes />}>
-        <Route path="" element={<Home />}>
+        <Route path="" element={<Home />} />
         <Route path="search" element={<Search />} />
-        </Route>
-
-        <Route path="movies/:movieId" element={<Movies />} />
-        <Route path="TVShows/:showId" element={<TVShows />} />
+        <Route path="movies" element={<Movies />} />
+        <Route path="TVShows" element={<TVShows />} />
       </Route>
     </Route>
   )
