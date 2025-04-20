@@ -34,7 +34,7 @@ function Category({ categoryName, ref}) {
       <SliderRight slideRef={slideRef} showSlider={showSlider}/>
         {category &&
           category.map((movie) => (
-            <CategoryPreview
+            <MediaDisplayIcon
               key={movie.id}
               backdrop={movie.backdrop_path}
               poster={movie.poster_path}
