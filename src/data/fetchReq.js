@@ -6,6 +6,8 @@ import { useState } from "react";
 const fetchTrendingMovies =  async ()=>{
     try {
         const response = await axios.get(requests.fetchTrending);
+        console.log(requests.fetchTrending);
+
         return response.data.results;
     } catch (error) {
         console.log(error);
