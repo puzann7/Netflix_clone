@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchCategory } from "../data/fetchReq";
-import CategoryPreview from "../Small components/CategoryPreview";
+import MediaDisplayIcon from "../Small components/MediaDisplayIcon";
 import { genreMap } from "../data/apiUrl";
 import { useRef } from "react";
 import { SliderLeft, SliderRight } from "../Small components/Slider";
