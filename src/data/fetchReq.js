@@ -1,6 +1,6 @@
 import axios from "axios";
 import requests from "./apiUrl";
-import { useState } from "react";
+import { useEffect } from "react";
 
 
 const fetchTrendingMovies =  async ()=>{
@@ -21,13 +21,19 @@ const fetchLatestMovies = async ()=>{
         console.log(error);
     }
 }
-const fetchAllMovies = async ()=>{
-    try {
-        const res = await axios.get()
-    } catch (error) {
-        console.log(error);
+const fetchAllMovies = async (page)=>{
+        try {
+            const res = await axios.get(requests.fetchAllMovies,{
+                params:{
+                    page
+                }
+            })
+            console.log(res.data.results);
+        } catch (error) {
+            console.log(error);
 
-    }
+        }
+
 }
 
 const fetchCategory = async (categoryId)=>{
@@ -53,4 +59,4 @@ const fetchMovieTrailer = async  (movieId) =>{
 }
 //   fetchTVTrailer: (tvId) => `${BASE_URL}/tv/${tvId}/videos?api_key=${API_KEY}`,
 
-export {fetchTrendingMovies, fetchCategory, fetchMovieTrailer, fetchLatestMovies}
+export {fetchTrendingMovies, fetchCategory, fetchMovieTrailer, fetchLatestMovies, fetchAllMovies}
