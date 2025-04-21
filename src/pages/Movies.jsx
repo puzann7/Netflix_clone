@@ -11,7 +11,7 @@ function Movies() {
 
   return(
     <div>
-heyy
+    Movie section
     </div>
   )
 }
