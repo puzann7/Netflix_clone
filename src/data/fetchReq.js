@@ -25,7 +25,8 @@ const fetchAllMovies = async (page)=>{
         try {
             const res = await axios.get(requests.fetchAllMovies,{
                 params:{
-                    page
+                    page,
+                    sortBy,
                 }
             })
             console.log(res.data.results);
