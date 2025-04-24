@@ -7,7 +7,6 @@ const fetchTrendingMovies =  async ()=>{
     try {
         const response = await axios.get(requests.fetchTrending);
         console.log(requests.fetchTrending);
-
         return response.data.results;
     } catch (error) {
         console.log(error);
@@ -21,15 +20,14 @@ const fetchLatestMovies = async ()=>{
         console.log(error);
     }
 }
-const fetchAllMovies = async (page)=>{
+const fetchAllMovies = async (page, {options})=>{
         try {
             const res = await axios.get(requests.fetchAllMovies,{
                 params:{
                     page,
-                    sortBy,
                 }
             })
-            console.log(res.data.results);
+            return res.data.results;
         } catch (error) {
             console.log(error);
 
